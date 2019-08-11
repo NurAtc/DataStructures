@@ -15,7 +15,7 @@ void push(struct Liste** head, int s);
 
 // 1.listeyle 2.listeyi karşılaştırcaz. önce 1.nin ilk elemanıyla 2.nin tüm elemanlarını,
 // sonra 1.nin ikinci elemanıyla 2.nin tüm elemanlarını..
-struct Liste *getIntersection(struct Liste *ilk1, struct Liste *ilk2) // iki liste de parametre olarak gelir
+struct Liste *getIntersection(struct Liste *ilk1, struct Liste *ilk2) 
 {
 	struct Liste *result = NULL;
 	// result adında bi list oluşturuyoruz. Ortak elemanları buna ekleyip fonksiyonun sonunda döndürcez
@@ -42,7 +42,7 @@ struct Liste *getIntersection(struct Liste *ilk1, struct Liste *ilk2) // iki lis
 }
 
 void push(struct Liste** ilk, int s) // yeni gelen elemanı listenin başına ekler
-{									 // bu yüzden de ekleme yapılacak listenin head'ini ve yeni gelen değeri parametre alır
+{				     // bu yüzden de ekleme yapılacak listenin head'ini ve yeni gelen değeri parametre alır
 	struct Liste* temp = (struct Liste*)malloc(sizeof(struct Liste));
 
 	temp->sayi = s;
@@ -61,10 +61,10 @@ void printList(struct Liste *list)
 
 int main()
 {
-	struct Liste* ilk1 = NULL; // Liste tipindeki struct yapısını kullanarak, head'i ilk1 olan bi list oluşturduk.
-	struct Liste* ilk2 = NULL; // Liste tipindeki struct yapısını kullanarak, head'i ilk2 olan ikinci bi list oluşturduk.
+	struct Liste* ilk1 = NULL; 
+	struct Liste* ilk2 = NULL; 
 	struct Liste* intersecn = NULL; // getIntersection fonksiyonunun dönüş tipi struct Liste *.
-									// fonksiyonun dönderdiği değeri altta intersecn'e atıycaz.
+					// fonksiyonun dönderdiği değeri altta intersecn'e atıycaz.
 
 	push(&ilk1, 22); // head'i ilk1 olan listeye ekleme yapalım.
 	push(&ilk1, 11);
@@ -81,7 +81,7 @@ int main()
 	printList(ilk2);
 	printf("\n");
 
-	intersecn = getIntersection (ilk1, ilk2); // listelerimizi fonksiyona gönderelim. gelen değerini de intersecn'e atayalım.
+	intersecn = getIntersection (ilk1, ilk2); // fonksiyona gönderelim. gelen değerini de intersecn'e atayalım.
 	printf ("\nIntersection list is \n"); 
-	printList (intersecn); // ortak elemanları tutan intersecn listesini, yazdırma fonksiyonuna gönderelim :)
+	printList (intersecn); // ortak elemanları tutan intersecn'i, yazdırma fonksiyonuna gönderelim.
 }
