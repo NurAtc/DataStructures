@@ -15,14 +15,13 @@ typedef struct Liste
 void delete(struct Liste** ilk, int n) // silinme yapılacak listeyi ve silinme sırasını parametre alır
 {
     struct Liste *prev, *temp=(*ilk);
-	// prev ve temp diye iki yeni liste oluşturalım
-	// temp'e gelen listeyi(head'ini) atayalım
+	
 	int i = 1; // silinecek sıraya gelmek için bu değişkeni kullancaz. o yüzden 1'den başlasın.
 
 	if (temp != NULL && n==1) // eğer silinecek eleman en baştaysa;
     { 
-        (*ilk) = temp->sonraki;   // listemizin head'inin bi sonrasını head yapalım
-        free(temp);               // eski ilk elemanı yani eski head'i de free yapalım
+        (*ilk) = temp->sonraki;  
+        free(temp);               
     } 
 	
 	else
@@ -64,7 +63,7 @@ void printList(struct Liste *list)
 
 int main()
 {
-	struct Liste* ilk1 = NULL; // head'i ilk1 olan bi liste oluşturalım
+	struct Liste* ilk1 = NULL; 
 	int n; // silinecek sırayı n değişkeninde tutalım
 
 	push(&ilk1, 22); // listeye ekleme yapalım. bu yüzden listeyi(head'ini) ve yeni değeri her seferinde push'a gönderelim
